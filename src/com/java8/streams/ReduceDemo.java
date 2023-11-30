@@ -1,16 +1,16 @@
-package com.interview.streams;
+package com.java8.streams;
 
 import java.util.*;
 
 public class ReduceDemo {
 
     public static void main(String[] args) {
-        List<Employee1> list = new ArrayList<>();
-        list.add(new Employee1("Dave", 23, 20000));
-        list.add(new Employee1("Joe", 18, 40000));
-        list.add(new Employee1("Ryan", 54, 100000));
-        list.add(new Employee1("Iyan", 5, 34000));
-        list.add(new Employee1("Ray", 63, 54000));
+        List<Employee> list = new ArrayList<>();
+        list.add(new Employee("Dave", 23, 20000));
+        list.add(new Employee("Joe", 18, 40000));
+        list.add(new Employee("Ryan", 54, 100000));
+        list.add(new Employee("Iyan", 5, 34000));
+        list.add(new Employee("Ray", 63, 54000));
 
         // reduce(BinaryOperator<T> accumulator)
 
@@ -69,43 +69,10 @@ public class ReduceDemo {
 
         System.out.println("Max and Min are : " + max + " " + min + " " + "respectively");
 
-        Optional<Employee1> maxSalary = list.stream()
+        Optional<Employee> maxSalary = list.stream()
                 .max(Comparator.comparing(p->p.getSalary()));
 
         System.out.println("Max Salary : " + maxSalary);
 
-    }
-}
-
-class Employee1 {
-    String name;
-    int age;
-    int salary;
-
-    Employee1(String name, int age, int salary) {
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                '}';
     }
 }

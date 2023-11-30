@@ -1,4 +1,4 @@
-package com.interview.streams;
+package com.java8.streams;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,42 +31,5 @@ public class OptionalMethodsDemo {
         demo.populateEmployee();
         Optional<Employee> emp = demo.getEmployee(123);
         emp.ifPresent(System.out::println);
-    }
-}
-
-class Employee {
-    String name;
-    int age;
-    int salary;
-
-    Employee(String name) {
-        this.name = name;
-    }
-
-    Employee(String name, int age, int salary) {
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                '}';
     }
 }
