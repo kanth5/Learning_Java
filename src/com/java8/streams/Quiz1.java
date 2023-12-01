@@ -17,6 +17,12 @@ public class Quiz1 {
         employeeList.add(new Employee2("Jodi", 43, 67000, "USA"));
         employeeList.add(new Employee2("Ryan", 53, 54000, "China"));
 
+        Long totalCountInStream1 = employeeList.stream()
+                .filter(e->e.getAge() > 40)
+                .collect(Collectors.counting());
+
+        System.out.println(totalCountInStream1);
+
         Map<String, Long> totalByCountry1 = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee2::getCountry,Collectors.counting()));
 
