@@ -60,14 +60,14 @@ public class MapImprovements1Demo {
         // Below line will throw Null Pointer Exception.
         //val = fruits2.compute("banana", (k, v) -> v + 10);
 
-        System.out.println("Before (fruits1) : " + fruits1);
+        System.out.println("Before (fruits2) : " + fruits2);
 
         // computeIfAbsent (computed value if absent else original value)
 
-        int val1 = fruits1.computeIfAbsent("apple", v->10);
-        int val2 = fruits1.computeIfAbsent("banana", v->20);
+        int val1 = fruits2.computeIfAbsent("apple", v->10);
+        int val2 = fruits2.computeIfAbsent("banana", v->20);
         System.out.println("compute if absent : " + val1 + " " + val2);
-        System.out.println(fruits1);
+        System.out.println(fruits2);
 
         System.out.println("Before (fruits2) : " + fruits2);
 
