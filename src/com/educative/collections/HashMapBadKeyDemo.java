@@ -19,6 +19,9 @@ import java.util.Map.Entry;
 // As we can see, it compares two reference points to the same object. Since we have created two separate Employee
 // objects, the equality check failed and both the objects were saved.
 
+// If we had the equals method as well comparing on empId then the second object insertion into the HaspMap would have failed,
+// preserving the contract of HashMap.
+
 public class HashMapBadKeyDemo {
 
     public static void main(String args[]) {
@@ -32,7 +35,8 @@ public class HashMapBadKeyDemo {
         employeeMap.put(emp2, 45000);
 
         for (Entry<Employee1, Integer> entry : employeeMap.entrySet()) {
-            System.out.println("Employee Id: " + entry.getKey().empId + " Employee Name: " + entry.getKey().empName);
+            System.out.println("Employee Id: " + entry.getKey().empId + " Employee Name: " + entry.getKey().empName + " Salary "
+                    + entry.getValue());
         }
 
     }
@@ -57,5 +61,11 @@ class Employee1 {
         result = prime * result + ((empName == null) ? 0 : empName.hashCode());
         return result;
     }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        Employee1 emp1 = (Employee1)obj;
+//        return this.empId == emp1.empId;
+//    }
 
 }

@@ -26,10 +26,12 @@ public class HashMapGoodKeyDemo {
         employeeMap.put(emp1, 56000);
 
         System.out.println(employeeMap.get(emp1));
+        System.out.println(employeeMap.size());
 
         emp1.empName = "Alex";
 
         System.out.println(employeeMap.get(emp1));
+        System.out.println(employeeMap.size());
 
     }
 }
